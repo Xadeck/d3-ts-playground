@@ -1,8 +1,11 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "composite": true,
   },
-  "include": ["src/**/*"],
+  "references": [
+    { "path": "bin" },
+    { "path": "src" }
+  ],
+  "include": []
 }

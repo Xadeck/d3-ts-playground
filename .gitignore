@@ -1,3 +1,9 @@
 node_modules/
+# Ignore the generated TS files.
+tsconfig.tsbuildinfo
+bin/*.js
+bin/*.d.ts
 dist/*.js
+dist/*.d.ts
+# Keep the manually added JS files.
 !dist/d3.v7.js

@@ -16,7 +16,8 @@ const MIME_TYPES = new Map<string, string>([
   [ "jpg", "image/jpg" ],
   [ "gif", "image/gif" ],
   [ "ico", "image/x-icon" ],
-  [ "svg", "image/svg+xml" ] 
+  [ "svg", "image/svg+xml" ],
+  [ "tsv", "text/tab-separated-values" ] 
 ]);
 
 http
