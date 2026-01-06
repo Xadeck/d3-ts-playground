@@ -1,11 +1,12 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "composite": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "lib": [ "dom" ],
   },
-  "references": [
-    { "path": "bin" },
-    { "path": "src" }
-  ],
-  "include": []
+  "include": ["src/**/*"],
 }

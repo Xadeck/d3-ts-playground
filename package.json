@@ -1,15 +1,10 @@
 {
-  "name": "d3",
+  "name": "d3-playground",
   "version": "1.0.0",
   "description": "Tinkering with D3",
-  "type": "module",
   "scripts": {
-    "dev": "tsc-watch -b --onFirstSuccess 'node bin/server.js'",
-    "build": "tsc --build --verbose",
-    "ibuild": "tsc --build --listEmittedFiles --watch",
-    "clean": "tsc --build --clean"
   },
-  "author": "",
+  "author": "Xavier Decoret",
   "license": "ISC",
   "devDependencies": {
     "@eslint/css": "^0.14.1",
@@ -17,15 +12,8 @@
     "@eslint/json": "^0.14.0",
     "@tsconfig/node20": "^20.1.8",
     "@types/d3": "^7.4.3",
-    "@types/livereload": "^0.9.5",
-    "@types/node": "^25.0.3",
     "esbuild": "0.27.2",
     "eslint": "^9.39.2",
-    "globals": "^17.0.0",
-    "jiti": "^2.6.1",
-    "livereload": "^0.10.3",
-    "tsc-watch": "^7.2.0",
-    "typescript-eslint": "^8.52.0",
-    "url": "^0.11.4"
+    "typescript-eslint": "^8.52.0"
   }
 }

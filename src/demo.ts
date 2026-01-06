@@ -1,5 +1,5 @@
-import { msg } from "./constants.js";
-import * as d3 from "./d3.v7.js";
+import { msg } from "constants";
+import * as d3 from "d3";
 
 export function demo() {
   const main = document.querySelector("main")!;
