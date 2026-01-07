@@ -1,31 +1,28 @@
 {
-  "name": "d3",
+  "name": "d3-ts-playground",
   "version": "1.0.0",
-  "description": "Tinkering with D3",
-  "type": "module",
+  "description": "Tinkering with D3 in Typescript",
+  "source": "src/index.html",
+  "author": "Xavier Decoret",
   "scripts": {
-    "dev": "tsc-watch -b --onFirstSuccess 'node bin/server.js'",
-    "build": "tsc --build --verbose",
-    "ibuild": "tsc --build --listEmittedFiles --watch",
-    "clean": "tsc --build --clean"
+    "check": "tsc --noEmit",
+    "check:watch": "tsc --noEmit --watch",
+    "lint": "eslint --ignore-pattern package-lock.json",
+    "dev": "parcel --open"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
     "@eslint/json": "^0.14.0",
-    "@tsconfig/node20": "^20.1.8",
-    "@types/d3": "^7.4.3",
-    "@types/livereload": "^0.9.5",
-    "@types/node": "^25.0.3",
-    "esbuild": "0.27.2",
+    "@eslint/markdown": "^7.5.1",
     "eslint": "^9.39.2",
     "globals": "^17.0.0",
     "jiti": "^2.6.1",
-    "livereload": "^0.10.3",
-    "tsc-watch": "^7.2.0",
-    "typescript-eslint": "^8.52.0",
-    "url": "^0.11.4"
+    "parcel": "^2.16.3",
+    "typescript-eslint": "^8.52.0"
+  },
+  "dependencies": {
+    "@types/d3": "^7.4.3",
+    "d3": "^7.9.0"
   }
 }
