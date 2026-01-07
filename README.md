@@ -19,21 +19,21 @@ Node's `d3` and `@types/d3` dependencies. I've tried an ESbuild setup using
 [this 2023 Medium post](https://eisenbergeffect.medium.com/an-esbuild-setup-for-typescript-3b24852479fe)
 but also struggled with D3 integration. In the end, I went with using
 [Parcel](http://parcel.org), despite the fact that it's quite a big dependency
-- one that causes `npm audit` to currently report
+(one that causes `npm audit` to currently report
 [vulnerabilities](https://github.com/advisories/GHSA-qm9p-f9j5-w83w) for Parcel
-- and the fact that the previous Medium article points out that they tried
+) and that the previous Medium article points out that they tried
 and gave up. I got a very useful kickstart from
 https://github.com/Lemoncode/d3js-typescript-examples.
 
 ## Installation
 
-Clone this directory using your favorite message. Then run:
+Clone this directory using your favorite method. Then run:
 
 ```shell
 npm install
 ```
 
-NOTE: this repository does *not* version the `package-lock.json` file. This is
+This repository does *not* version the `package-lock.json` file. This is
 normally the recommended way ([npm
 docs](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json)),
 although there is a loooooot of debate about this on forums. In my case, it's
@@ -52,14 +52,13 @@ npm run dev
 
 It should open http://localhost:1234 in your browser. Edit the `src/*.html`
 files and the `src/*.ts` files. Upon saving, changed Typescript files are
-recompiled, and the browser automatically reloads.
+recompiled, and the browser automatically reloads the page.
 
 When everything is working, you can run `npx parcel build` and distribute the
 contents of the `dist/` directory as a standalone webpage.
 
-The above command runs parcel CLI, which doesn't perform Typescript
-verifications. In a second terminal, you can run continuously the Typescript
-compiler for that:
+The `npm run dev` command doesn't perform Typescript verifications. In a second
+terminal, you can run continuously the Typescript compiler for that:
 
 ```shell
 npm run check:watch
