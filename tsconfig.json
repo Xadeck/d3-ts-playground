@@ -1,12 +1,14 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
     "target": "es6",
     "module": "es6",
     "moduleResolution": "node",
-    "lib": [ "dom" ],
+    "declaration": false,
+    "sourceMap": true,
+    "baseUrl": "./src/",
+    "lib": [ "es2023", "dom" ]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*"]
 }
