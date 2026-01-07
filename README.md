@@ -11,17 +11,36 @@ Typescript is mandatory.
 It's however painstakingly hard to have a minimal, lightweight setup for serving
 just HTML code with script contents written in Typescript. Maybe the use of
 [Bun's native typescript](https://bun.com/docs/runtime/typescript) would work,
-but I have the additional constraint that I can only use Node 20 at work, so I
-can't use Bun.
+but I have the additional constraint that I can only use Node 20 at work.
 
 I've tried a pure Node approach, with a custom minimal server and livereload but
-I struggled with Javascript module and getting D3 and it's typescript types from
+I struggled with Javascript modules and getting D3 and it's typescript types from
 Node's `d3` and `@types/d3` dependencies. I've tried an ESbuild setup using
 [this 2023 Medium post](https://eisenbergeffect.medium.com/an-esbuild-setup-for-typescript-3b24852479fe)
 but also struggled with D3 integration. In the end, I went with using
-parcel.org, despite the fact that it's quite a big dependency - and the previous
-Medium article pointing out that they tried and gave up. I got a very useful
-kickstart from https://github.com/Lemoncode/d3js-typescript-examples.
+[Parcel](http://parcel.org), despite the fact that it's quite a big dependency
+- one that causes `npm audit` to currently report
+[vulnerabilities](https://github.com/advisories/GHSA-qm9p-f9j5-w83w) for Parcel
+- and the fact that the previous Medium article points out that they tried
+and gave up. I got a very useful kickstart from
+https://github.com/Lemoncode/d3js-typescript-examples.
+
+## Installation
+
+Clone this directory using your favorite message. Then run:
+
+```shell
+npm install
+```
+
+NOTE: this repository does *not* version the `package-lock.json` file. This is
+normally the recommended way ([npm
+docs](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json)),
+although there is a loooooot of debate about this on forums. In my case, it's
+simply because at work, I must use a special version of NPM which generates a
+`package-lock.json` file that would not be usable for most people, as it uses 
+a special verified registry which requires an `npm login`.
+
 
 ## Usage
 
@@ -50,17 +69,17 @@ Finally, once you're done editing, you can run ESlint once before committing
 your changes:
 
 ```shell
-npm run list
+npm run lint
 ```
 
 ## Directory structure
 
-*   `/src` contains the `.ts` files with D3 code, and the `.html` file to which
-    it applies.
+*   `/src` contains the `.ts` files with D3 code, and the `.html` file(s) to which
+    they apply.
 *   `/dist` contains the files served, which are
-    *   the manually added `.html` files
-    *   the manually added `.json` files for data
     *   the generated `.html` files that Parcel produces
+    *   the manually added `.json` files for data
+    *   other resources like `favicon.ico`
 
 Beware that `.gitignore` is configured to ignore the generated files in the
 `/dist` directory.
