@@ -3,7 +3,7 @@
 import { header } from "./lib";
 import * as d3 from "d3";
 
-export interface Datum {
+export type Datum = {
   x: number;
   y: number;
 }
