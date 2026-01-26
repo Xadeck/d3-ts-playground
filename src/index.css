@@ -1,0 +1,17 @@
+main {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+}
+
+svg {
+  border-radius: 5px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 0 6px rgba(0, 0, 0, 0.1);
+
+  overflow: visible;
+  padding: 2em 3em;
+}
