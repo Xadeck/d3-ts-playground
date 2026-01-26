@@ -53,7 +53,6 @@ export async function demo() {
   // the padding (see comment above about overflow).
   const w = svg.width.animVal.value;
   const h = svg.height.animVal.value;
-  console.log(w, h);
   // Compute the x and y domains. Typescript compiler can't know that data
   // is not an empty array, so the return type can be [undefined, undefined].
   // Since we know it is not empty, we use the `as` approach suggested in [1]
