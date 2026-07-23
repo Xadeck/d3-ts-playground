@@ -18,7 +18,7 @@ I struggled with Javascript modules and getting D3 and it's typescript types fro
 Node's `d3` and `@types/d3` dependencies. I've tried an ESbuild setup using
 [this 2023 Medium post](https://eisenbergeffect.medium.com/an-esbuild-setup-for-typescript-3b24852479fe)
 but also struggled with D3 integration. In the end, I went with using
-[Parcel](http://parcel.org), despite the fact that it's quite a big dependency
+[Parcel](http://parceljs.org), despite the fact that it's quite a big dependency
 (one that causes `npm audit` to currently report
 [vulnerabilities](https://github.com/advisories/GHSA-qm9p-f9j5-w83w) for Parcel
 ) and that the previous Medium article points out that they tried
@@ -33,14 +33,13 @@ Clone this directory using your favorite method. Then run:
 npm install
 ```
 
-This repository does *not* version the `package-lock.json` file. This is
+This repository does _not_ version the `package-lock.json` file. This is
 normally the recommended way ([npm
 docs](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json)),
 although there is a loooooot of debate about this on forums. In my case, it's
 simply because at work, I must use a special version of NPM which generates a
-`package-lock.json` file that would not be usable for most people, as it uses 
+`package-lock.json` file that would not be usable for most people, as it uses
 a special verified registry which requires an `npm login`.
-
 
 ## Usage
 
@@ -73,12 +72,12 @@ npm run lint
 
 ## Directory structure
 
-*   `/src` contains the `.ts` files with D3 code, and the `.html` file(s) to which
-    they apply.
-*   `/dist` contains the files served, which are
-    *   the generated `.html` files that Parcel produces
-    *   the manually added `.json` files for data
-    *   other resources like `favicon.ico`
+- `/src` contains the `.ts` files with D3 code, and the `.html` file(s) to which
+  they apply.
+- `/dist` contains the files served, which are
+  - the generated `.html` files that Parcel produces
+  - the manually added `.json` files for data
+  - other resources like `favicon.ico`
 
 Beware that `.gitignore` is configured to ignore the generated files in the
 `/dist` directory.
